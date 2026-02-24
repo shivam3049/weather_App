@@ -1,8 +1,8 @@
-📱 Weather App
+# Weather App
 
 A simple Android Weather Application that displays current weather information using REST API.
 
-🚀 Features
+# Features
 
 Get current weather data by city name
 
@@ -12,7 +12,7 @@ Real-time weather data using API
 
 Clean and simple UI design
 
-🛠 Technologies Used
+# Technologies Used
 
 Kotlin
 
@@ -23,3 +23,4 @@ REST API
 Retrofit
 
 ViewBinding
+
