@@ -40,35 +40,24 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-        // DEFAULT CITY
         fetchWeatherData("Mumbai")
-
-        // SEARCH SETUP
         setupSearch()
     }
 
     private fun setupSearch() {
-        // Get internal EditText
         val searchEditText = binding.searchView.findViewById<EditText>(
             androidx.appcompat.R.id.search_src_text
         )
-
-        // Set hint and text colors
         searchEditText.hint = "Search City"
         searchEditText.setHintTextColor(Color.GRAY)
         searchEditText.setTextColor(Color.BLACK)
         searchEditText.isCursorVisible = true
-
-        //Click listener on whole SearchView
         binding.searchView.setOnClickListener {
-            binding.searchView.isIconified = false    // expand only when user clicks
+            binding.searchView.isIconified = false  
             searchEditText.requestFocus()
             val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
             imm.showSoftInput(searchEditText, InputMethodManager.SHOW_IMPLICIT)
         }
-
-        //Search submit listener
         binding.searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 if (!query.isNullOrBlank()) {
